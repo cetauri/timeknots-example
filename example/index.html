@@ -1,0 +1,268 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<script src="../src/d3.v2.min.js" type="application/javascript"></script>
+<script src="../src/timeknots.js" type="application/javascript"></script>
+<!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+<!-- <style>
+body {
+  font: 18px "Helvetica Neue";
+  font-weight:300;
+  text-rendering: optimizeLegibility;
+  margin-left: 20px;
+}
+</style> -->
+</head>
+<body>
+
+<div class="fluid-row">
+
+  <div class="span6">
+   <h2>1</h2>
+   <div id="timeline1"></div>
+   <h2>2</h2>
+   <div id="timeline2"></div>
+   <h2>3</h2>
+   <div id="timeline3"></div>
+   
+   <h5>Shows random meetings/free days</h5>
+   <div id="timeline3" style="width:500px;height: 200px;"></div>
+  </div>
+</div>
+<script type="text/javascript">
+
+
+var data = [{
+  "parameter": {
+    "BlueprintId": "hgn_su_rcol_01_t1",
+    "Amount": "10"
+  },
+  "usedItems": {},
+  "histories": [{
+    "changedType": 2,
+    "occuredAt": "2021-11-02T16:57:48.5401923Z",
+    "prevEndDt": "2021-11-02T17:04:33.4602982Z",
+    "postEndDt": "2021-11-02T17:04:33.4602982Z",
+    "prevDuration": 450,
+    "postDuration": 405,
+    "prevStatus": "P",
+    "postStatus": "S",
+    "reason": "Suspended"
+  }, {
+    "changedType": 3,
+    "occuredAt": "2021-11-02T16:58:52.0088697Z",
+    "prevEndDt": "2021-11-02T17:04:33.4602982Z",
+    "postEndDt": "2021-11-02T17:05:36.9823693Z",
+    "prevDuration": 405,
+    "postDuration": 405,
+    "prevStatus": "S",
+    "postStatus": "P",
+    "reason": "Resumed"
+  }, {
+    "changedType": 2,
+    "occuredAt": "2021-11-02T17:06:12.2116409Z",
+    "prevEndDt": "2021-11-02T17:05:36.9823693Z",
+    "postEndDt": "2021-11-02T17:05:36.9823693Z",
+    "prevDuration": 405,
+    "postDuration": 0,
+    "prevStatus": "P",
+    "postStatus": "S",
+    "reason": "Suspended"
+  }],
+  "id": "6cfaa24c-bdec-4f17-9f31-4a324d787d94",
+  "ttl": -1,
+  "playerId": "4D4FBD1E21B35750",
+  "type": 1,
+  "status": "S",
+  "duration": 0,
+  "startDt": "2021-11-02T16:58:51.9823693Z",
+  "endDt": "2021-11-02T17:05:36.9823693Z",
+  "createdDt": "2021-11-02T16:57:03.4602984Z",
+  "contextId": "97BAB9ACEA17AB01",
+  "moduleId": null,
+  "region": "TIMER_DEV",
+  "retry": 0,
+  "notiId": null,
+  "isPushSent": true,
+  "pushRetry": 1,
+  "description": null
+}, {
+  "parameter": {
+    "BlueprintId": "hgn_sf_plbo_02_t1",
+    "Amount": "1"
+  },
+  "usedItems": {},
+  "histories": [{
+    "changedType": 2,
+    "occuredAt": "2021-11-02T16:58:52.0557785Z",
+    "prevEndDt": "2021-11-02T16:58:43.722989Z",
+    "postEndDt": "2021-11-02T16:58:43.722989Z",
+    "prevDuration": 40,
+    "postDuration": 0,
+    "prevStatus": "P",
+    "postStatus": "S",
+    "reason": "Suspended"
+  }, {
+    "changedType": 3,
+    "occuredAt": "2021-11-02T17:06:12.1761453Z",
+    "prevEndDt": "2021-11-02T16:58:43.722989Z",
+    "postEndDt": "2021-11-02T16:58:43.722989Z",
+    "prevDuration": 0,
+    "postDuration": 0,
+    "prevStatus": "S",
+    "postStatus": "P",
+    "reason": "Resumed"
+  }],
+  "id": "4896785c-29a6-4cb2-a1a6-96450c5f952e",
+  "ttl": -1,
+  "playerId": "4D4FBD1E21B35750",
+  "type": 1,
+  "status": "P",
+  "duration": 0,
+  "startDt": "2021-11-02T16:58:03.722989Z",
+  "endDt": "2021-11-02T16:58:43.722989Z",
+  "createdDt": "2021-11-02T16:58:03.7229892Z",
+  "contextId": "DF442C3F961F5EAE",
+  "moduleId": null,
+  "region": "TIMER_DEV",
+  "retry": 0,
+  "notiId": null,
+  "isPushSent": true,
+  "pushRetry": 1,
+  "description": null
+}, {
+  "parameter": {
+    "BlueprintId": "bp_1N",
+    "Amount": "53"
+  },
+  "usedItems": {},
+  "histories": [{
+    "changedType": 2,
+    "occuredAt": "2021-11-02T16:58:52.0779858Z",
+    "prevEndDt": "2021-11-02T17:51:44.9117138Z",
+    "postEndDt": "2021-11-02T17:51:44.9117138Z",
+    "prevDuration": 3180,
+    "postDuration": 3173,
+    "prevStatus": "P",
+    "postStatus": "S",
+    "reason": "Suspended"
+  }, {
+    "changedType": 3,
+    "occuredAt": "2021-11-02T17:06:12.1922154Z",
+    "prevEndDt": "2021-11-02T17:51:44.9117138Z",
+    "postEndDt": "2021-11-02T17:59:05.1608993Z",
+    "prevDuration": 3173,
+    "postDuration": 3173,
+    "prevStatus": "S",
+    "postStatus": "P",
+    "reason": "Resumed"
+  }],
+  "id": "33469afc-291d-4366-9364-876e7a95063f",
+  "ttl": -1,
+  "playerId": "4D4FBD1E21B35750",
+  "type": 6,
+  "status": "P",
+  "duration": 3173,
+  "startDt": "2021-11-02T17:06:12.1608993Z",
+  "endDt": "2021-11-02T17:59:05.1608993Z",
+  "createdDt": "2021-11-02T16:58:44.911714Z",
+  "contextId": "1AE44B9E060D9DD6",
+  "moduleId": null,
+  "region": "TIMER_DEV",
+  "retry": 0,
+  "notiId": null,
+  "isPushSent": true,
+  "pushRetry": 1,
+  "description": null
+}];
+
+
+var mySchedule = [{name:"Wake up", date: "2012-09-28T06:00:00"},
+  {name:"Breakfast",  date:"2012-09-28T06:30:00"},
+  {name:"Leave kids at school",   date:"2012-09-28T07:45:00"},
+  {name:"Check email", date:  "2012-09-28T08:00:00"},
+  {name:"Lunch", date:  "2012-09-28T11:30:00"},
+  {name:"Send report", date:  "2012-09-28T13:15:00"},
+  {name:"Pick kids", date:  "2012-09-28T17:16:00"},
+  {name:"Dinner", date: "2012-09-28T18:13:00"},
+  {name:"Watch a movie", date:  "2012-09-28T20:16:00"},
+  {name:"Go to sleep", date:  "2012-09-28T23:00:00"}
+];
+
+const mySchedule1 = (data[0].histories.map(x => {
+  return {
+    name: x.reason,
+    date: x.occuredAt
+  }
+}));
+
+mySchedule1.push({
+  name: "Created",
+  date: data[0].createdDt,
+  color: 'red'
+});
+
+
+const mySchedule2 = (data[1].histories.map(x => {
+  return {
+    name: x.reason,
+    date: x.occuredAt
+  }
+}));
+
+mySchedule2.push({
+  name: "Created",
+  date: data[1].createdDt,
+  color: 'red'
+});
+
+const mySchedule3 = (data[2].histories.map(x => {
+  return {
+    name: x.reason,
+    date: x.occuredAt,
+    series:0
+
+  }
+}));
+
+mySchedule3.push({
+  name: "Created",
+  date: data[2].createdDt
+  // ,
+  //     series:1
+});
+
+
+TimeKnots.draw("#timeline1", mySchedule1, {horizontalLayout: true, color: "#669", height: 150, width:1500, showLabels: true, labelFormat:"%H:%M"});
+TimeKnots.draw("#timeline2", mySchedule2, {horizontalLayout: true, color: "#669", height: 150, width:1500, showLabels: true, labelFormat:"%H:%M"});
+TimeKnots.draw("#timeline3", mySchedule3, {horizontalLayout: true, color: "#669", height: 150, width:1500, showLabels: true, labelFormat:"%H:%M"});
+
+
+
+var agenda = new Array();
+var day = 86400000;
+var today = new Date();
+var series = ["Serie 1", "Serie 2", "Serie 3"];
+for(var i=-3; i<4; i++){
+  var thisdate = new Date(today.getTime() + i*day).toUTCString();
+  var thiscolor = "#44a";
+  var thisname = "Free day";
+  if(Math.random()>0.5){
+   thiscolor = "#b00";
+   thisname = "Meeting";
+  }
+  serieId = parseInt(Math.random()*100) %3;
+  thisseries = series[serieId];
+  console.log(thisseries + "@@");
+  var thiswidth = (i<0)?1:5;
+  agenda.push({date: thisdate, name: thisname,  series: thisseries })
+}
+console.log(agenda);
+TimeKnots.draw("#timeline3", agenda, {dateFormat: "%A", radius: 20});
+
+</script>
+
+</body>
+</html>
+
